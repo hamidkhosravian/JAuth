@@ -1,2 +1,2 @@
-# Just
-REST JWT Authentication in Ruby 
+# JAuth
+JWT Authentication in Ruby 
