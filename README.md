@@ -1,8 +1,8 @@
 # Jauth
-Short description and motivation.
+JWT RAILS AUTHENTICATION
 
 ## Usage
-How to use my plugin.
+If you want to use spec, please remove `sample` from `database.sample.yml` and `storage.sample.yml`.
 
 ## Installation
 Add this line to your application's Gemfile:
