@@ -12,4 +12,16 @@ gemspec
 # your gem to rubygems.org.
 
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+
+group :development, :test do
+  gem 'bullet'
+  gem 'byebug'
+  gem 'faker'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+end
+
+gem 'rubocop', require: false

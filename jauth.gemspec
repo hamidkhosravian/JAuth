@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "jauth"
   s.version     = Jauth::VERSION
   s.authors     = ["hamid"]
-  s.email       = [""]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Jauth."
-  s.description = "TODO: Description of Jauth."
+  s.email       = ["hamid.kh.1991@gmail.com"]
+  s.homepage    = ""
+  s.summary     = "JWT authentication for rails."
+  s.description = "JWT authentication for rails."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.2.1"
 
   s.add_development_dependency "pg"
+  s.add_development_dependency "jbuilder"
 end
