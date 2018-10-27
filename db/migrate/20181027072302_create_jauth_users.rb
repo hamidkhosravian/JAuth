@@ -24,8 +24,8 @@ class CreateJauthUsers < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
-    add_index :users, :confirmation_token,   unique: true
+    add_index :jauth_users, :email,                unique: true
+    add_index :jauth_users, :reset_password_token, unique: true
+    add_index :jauth_users, :confirmation_token,   unique: true
   end
 end
