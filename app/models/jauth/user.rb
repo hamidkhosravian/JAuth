@@ -7,6 +7,8 @@ module Jauth
 
     before_save { email.downcase! }
 
+    has_many :auth_tokens, autosave: true
+
     def self.encrypte_password=(password)
       BCrypt::Password.create(password)
     end

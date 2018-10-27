@@ -2,7 +2,13 @@ require 'rails_helper'
 
 module Jauth
   RSpec.describe User, type: :model do
-    it { should validate_presence_of :email }
-    it { should validate_presence_of :encrypted_password }
+    context "associations" do
+      it { should have_many(:auth_tokens) }
+    end
+
+    context "validations" do
+      it { should validate_presence_of :email }
+      it { should validate_presence_of :encrypted_password }
+    end
   end
 end
