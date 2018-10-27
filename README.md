@@ -22,7 +22,8 @@ $ gem install jauth
 ```
 
 ## Contributing
-Contribution directions go here.
+Contribution directions go to [contributors graphs](https://github.com/hamidkhosravian/Jauth/graphs/contributors)
+.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
