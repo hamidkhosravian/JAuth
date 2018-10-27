@@ -19,7 +19,7 @@ class CreateJauthUsers < ActiveRecord::Migration[5.2]
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
-      t.boolean   :confirm
+      t.boolean   :confirmed, default: false
 
       t.timestamps
     end
