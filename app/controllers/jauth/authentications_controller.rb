@@ -1,7 +1,7 @@
 require_dependency "jauth/application_controller"
 
 module Jauth
-  class AuthenticationController < ApplicationController
+  class AuthenticationsController < ApplicationController
 
     def sign_in
     end
