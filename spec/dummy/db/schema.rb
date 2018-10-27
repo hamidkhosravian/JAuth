@@ -16,12 +16,11 @@ ActiveRecord::Schema.define(version: 2018_10_27_185015) do
   enable_extension "plpgsql"
 
   create_table "jauth_auth_tokens", force: :cascade do |t|
+    t.integer "user_id"
     t.string "token"
     t.string "refresh_token"
-    t.bigint "jauth_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["jauth_user_id"], name: "index_jauth_auth_tokens_on_jauth_user_id"
     t.index ["refresh_token"], name: "index_jauth_auth_tokens_on_refresh_token", unique: true
     t.index ["token"], name: "index_jauth_auth_tokens_on_token", unique: true
   end
@@ -47,5 +46,4 @@ ActiveRecord::Schema.define(version: 2018_10_27_185015) do
     t.index ["reset_password_token"], name: "index_jauth_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "jauth_auth_tokens", "jauth_users"
 end

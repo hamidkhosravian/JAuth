@@ -1,9 +1,9 @@
 class CreateJauthAuthTokens < ActiveRecord::Migration[5.2]
   def change
     create_table :jauth_auth_tokens do |t|
-      t.string :token
-      t.string :refresh_token
-      t.references :jauth_user, foreign_key: true
+      t.integer :user_id
+      t.string  :token
+      t.string  :refresh_token
 
       t.timestamps
     end
