@@ -11,6 +11,7 @@ module Authentications
     validates :confirm_password, presence: true
 
     def call
+      add_error!(I18n.t("user.sign_up.errors.password_length")) unless password.size >= 8
       add_error!(I18n.t("user.sign_up.errors.confirm_password")) unless password.eql? confirm_password
 
       encrypted_password = User.encrypte_password(password)
