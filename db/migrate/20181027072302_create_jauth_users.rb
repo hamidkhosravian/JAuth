@@ -15,17 +15,10 @@ class CreateJauthUsers < ActiveRecord::Migration[5.2]
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
-      ## Confirmable
-      t.string   :confirmation_token
-      t.datetime :confirmed_at
-      t.datetime :confirmation_sent_at
-      t.boolean  :confirmed, default: false
-
       t.timestamps
     end
 
     add_index :jauth_users, :email,                unique: true
     add_index :jauth_users, :reset_password_token, unique: true
-    add_index :jauth_users, :confirmation_token,   unique: true
   end
 end
