@@ -6,9 +6,11 @@ require File.expand_path("../dummy/config/environment", __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-
+require "i18n"
 require "faker"
 require "factory_bot_rails"
+
+I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -35,6 +37,7 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

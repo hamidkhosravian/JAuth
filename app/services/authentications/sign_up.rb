@@ -14,8 +14,8 @@ module Authentications
       add_error!(I18n.t("user.sign_up.errors.password_length")) unless password.size >= 8
       add_error!(I18n.t("user.sign_up.errors.confirm_password")) unless password.eql? confirm_password
 
-      encrypted_password = User.encrypte_password(password)
-      user = User.create!(email: email, encrypted_password: encrypted_password)
+      encrypted_password = ::Jauth::User.encrypte_password(password)
+      user = ::Jauth::User.create!(email: email, encrypted_password: encrypted_password)
       context[:user] = user
     end
   end

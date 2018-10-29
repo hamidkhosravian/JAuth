@@ -1,6 +1,7 @@
 en:
-  sign_up:
-    successful: Your account create successful.
-    errors:
-      confirm_password: Password and confirm password is not equal!
-      password_length: Password length most be greater than 8.
+  user:
+    sign_up:
+      successful: Your account create successful.
+      errors:
+        confirm_password: Password and confirm password is not equal!
+        password_length: Password length most be greater than 8.

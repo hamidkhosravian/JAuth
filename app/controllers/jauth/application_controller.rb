@@ -1,3 +1,5 @@
+require "peafowl"
+
 module Jauth
   class ApplicationController < ActionController::API
     # protect_from_forgery with: :exception
@@ -6,7 +8,7 @@ module Jauth
 
     private
     def bad_request_error(exception)
-      render json: { response: exception.message, status: 400 }.to_json, status: 400
+      render json: { response: JSON.parse(exception.message), status: 400 }.to_json, status: 400
     end
   end
 end
