@@ -11,12 +11,16 @@ module Jauth
 
     has_many :auth_tokens, autosave: true
 
-    def self.encrypte_password(password)
-      BCrypt::Password.create(password)
+    def valid_password?(password)
+      BCrypt::Password.new(self.encrypted_password) == password
     end
 
-    def valid_password?(password)
-      BCrypt::Password.new(self.encrypted_password).eql? password
+    def password=(password)
+      self.encrypted_password = BCrypt::Password.create(password) if password.present?
+    end
+
+    def token
+      auth_tokens.newer.first
     end
   end
 end

@@ -5,3 +5,7 @@ en:
       errors:
         confirm_password: Password and confirm password is not equal!
         password_length: Password length most be greater than 8.
+    sign_in:
+      errors:
+        not_found: Coudln't find the user.
+        invalid_password: Password is not valid.

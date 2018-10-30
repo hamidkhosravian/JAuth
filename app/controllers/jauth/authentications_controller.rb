@@ -15,6 +15,13 @@ module Jauth
     end
 
     def sign_in
+      result = Authentications::SignIn.call(params.permit(
+          :email,
+          :password
+      ))
+      raise BadRequestError, result.errors if result.failure?
+
+      render :user
     end
 
     def sign_out
