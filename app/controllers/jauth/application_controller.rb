@@ -1,8 +1,10 @@
 require "peafowl"
+require 'jbuilder'
 
 module Jauth
   class ApplicationController < ActionController::API
     # protect_from_forgery with: :exception
+    include ActionView::Rendering
 
     rescue_from BadRequestError, with: :bad_request_error
     rescue_from NotFoundError, with: :not_found_error

@@ -1,4 +1,4 @@
-module Jwt
+module Token
   class Generate
     include Peafowl
 
@@ -8,7 +8,7 @@ module Jwt
     def call
       payload = { user_id: user.id, iat: Time.now.to_i}
 
-      token_encode = Jwt::Encode.call(payload: payload)
+      token_encode = ::Token::Encode.call(payload: payload)
       add_error!(token_encode.errors) if token_encode.failure?
       token = token_encode.refresh_token
       refresh_token = token_encode.refresh_token

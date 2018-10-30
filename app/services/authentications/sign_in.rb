@@ -24,7 +24,7 @@ module Authentications
     private
 
     def generate_auth_token(user)
-      auth_token = Jwt::Generate.call(user: user)
+      auth_token = ::Token::Generate.call(user: user)
       add_error!(auth_token.errors) if auth_token.failure?
 
       auth_token

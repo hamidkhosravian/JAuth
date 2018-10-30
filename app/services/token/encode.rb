@@ -1,4 +1,4 @@
-module Jwt
+module Token
   class Encode
     include Peafowl
 

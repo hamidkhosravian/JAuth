@@ -11,7 +11,7 @@ module Jauth
       ))
       raise BadRequestError, result.errors if result.failure?
 
-      render I18n.t("user.sign_up.successful"), status: 201
+      render json: {response: I18n.t("user.sign_up.successful"), status: 201}, status: :created
     end
 
     def sign_in
@@ -21,7 +21,8 @@ module Jauth
       ))
       raise BadRequestError, result.errors if result.failure?
 
-      render :user
+      @user = result.user
+      render "users/show", status: :ok
     end
 
     def sign_out

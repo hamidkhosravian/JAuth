@@ -16,6 +16,7 @@ module Jauth
     end
 
     def password=(password)
+      raise BadRequestError, I18n.t("user.sign_up.errors.password_length") if password.size < 8
       self.encrypted_password = BCrypt::Password.create(password) if password.present?
     end
 

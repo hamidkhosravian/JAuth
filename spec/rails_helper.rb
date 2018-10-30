@@ -74,6 +74,8 @@ RSpec.configure do |config|
     end
   end
 
+  config.include FactoryBot::Syntax::Methods
+
   FactoryBot.definition_file_paths = [File.expand_path('../factories', __FILE__)]
   FactoryBot.find_definitions
 end

@@ -33,5 +33,19 @@ module Jauth
         end
       end
     end
+
+    describe "when user sign in" do
+      let!(:user_attributes) { FactoryBot.attributes_for(:jauth_user) }
+
+      it "with valid data" do
+        post :sign_up, params: FactoryBot.attributes_for(:valid_jauth_user_register)
+        expect(response).to have_http_status(201)
+
+        post :sign_in, params: user_attributes, format: 'json'
+        res = JSON.parse(response.body)
+        expect(response).to have_http_status(200)
+        expect(res["email"]).to eq(user_attributes[:email])
+      end
+    end
   end
 end
