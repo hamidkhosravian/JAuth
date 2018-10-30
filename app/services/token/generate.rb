@@ -10,7 +10,7 @@ module Token
 
       token_encode = ::Token::Encode.call(payload: payload)
       add_error!(token_encode.errors) if token_encode.failure?
-      token = token_encode.refresh_token
+      token = token_encode.token
       refresh_token = token_encode.refresh_token
 
       auth_token = ::Jauth::AuthToken.new
